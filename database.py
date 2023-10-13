@@ -14,9 +14,9 @@ DATABASE_DSN: str = 'postgresql+psycopg2://{user}:{password}@{host}:{port}/{name
 
 engine: Engine = create_engine(DATABASE_DSN, echo=True)
 
-session: Session = sessionmaker(engine)
+session_maker: Session = sessionmaker(engine)
 
 
-async def get_db_session() -> Session:
-    with session() as session:
+def get_db_session() -> Session:
+    with session_maker() as session:
         yield session 
