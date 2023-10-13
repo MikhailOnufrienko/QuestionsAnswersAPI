@@ -18,9 +18,5 @@ class ResponseFromPublicAPI(BaseModel):
     result: list[ResponseFromPublicAPISingle]
 
 
-class QuestionResponseSingle(BaseModel):
-    question: str
-
-
 class QuestionResponse(BaseModel):
-    questions: list[QuestionResponseSingle]
+    question: str
