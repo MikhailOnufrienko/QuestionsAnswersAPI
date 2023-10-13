@@ -10,7 +10,7 @@ def get_questions(questions_num: int, db: Session) -> dict:
     while True:
         url = f'https://jservice.io/api/random?count={questions_num}'
         response = requests.get(url)
-        if response.status_code == 200:
+        if response.status_code != 200:
             return {'public_api_error': f'Ответ стороннего API отличается от успешного.
                     Код ответа: {response.status_code}'}
         data = response.json()
