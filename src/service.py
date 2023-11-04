@@ -1,14 +1,9 @@
-import logging
-
 import requests
 from sqlalchemy import desc, select
 from sqlalchemy.orm import Session
 
 from .models import QuestionAndAnswer
 from .schemas import ResponseFromPublicAPI, ResponseFromPublicAPISingle
-
-
-logger = logging.getLogger(__name__)
 
 
 def get_questions(questions_num: int, db: Session) -> dict:

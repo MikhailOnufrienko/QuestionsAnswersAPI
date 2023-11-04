@@ -5,6 +5,10 @@ class QuestionRequest(BaseModel):
     questions_num: PositiveInt = Field(strict=True, gt=0, le=100)
 
 
+class QuestionResponse(BaseModel):
+    question: str
+
+
 class ResponseFromPublicAPISingle(BaseModel):
     id: int
     question: str
@@ -14,7 +18,3 @@ class ResponseFromPublicAPISingle(BaseModel):
 
 class ResponseFromPublicAPI(BaseModel):
     result: list[ResponseFromPublicAPISingle]
-
-
-class QuestionResponse(BaseModel):
-    question: str

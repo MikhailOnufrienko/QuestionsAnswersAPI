@@ -7,12 +7,12 @@ load_dotenv()
 
 
 class Settings(BaseSettings):
-    SERVICE_NAME: str = 'Q&A_API'
-    DB_HOST: str = '127.0.0.1'
-    DB_PORT: int = 5432
+    SERVICE_NAME: str
+    DB_HOST: str
+    DB_PORT: int
     DB_USER: str
     DB_PASSWORD: str
-    DB_NAME: str = 'ques_and_ans_api'
+    DB_NAME: str
    
     class Config:
         env_file = '.env'
